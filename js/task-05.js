@@ -8,12 +8,10 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-// console.table(products);
-
 const getAllPropValues = function (arr, prop) {
-  let allValues = [];
+  const allValues = [];
   for (const product of arr) {
-    if (product[prop] !== undefined) {
+    if (product[prop]) {
       allValues.push(product[prop]);
     }
   }

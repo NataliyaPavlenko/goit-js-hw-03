@@ -3,9 +3,8 @@
     передаваемого в функцию, имеет вид "имя": "зарплата". */
 
 const countTotalSalary = function (employees) {
-  const total = Object.values(employees);
   let sum = 0;
-  for (const salary of total) {
+  for (const salary of Object.values(employees)) {
     sum += salary;
   }
   return sum;

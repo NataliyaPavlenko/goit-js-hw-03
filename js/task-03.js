@@ -1,16 +1,15 @@
 /* Напиши функцию findBestEmployee(employees),
-    которая принимает объект сотрудников и возвращает имя самого продуктивного
-    (который выполнил больше всех задач).Сотрудники и кол - во выполненых задач содержатся
+которая принимает объект сотрудников и возвращает имя самого продуктивного
+(который выполнил больше всех задач).Сотрудники и кол - во выполненых задач содержатся
 как свойства объекта в формате "имя": "кол-во задач". */
 
 const findBestEmployee = function (employees) {
-  const bestEmployee = Object.keys(employees);
-  let findBest = employees[bestEmployee[0]]; // получаем  первое значение обьекта (вставляя ключ из массива)
-  let nameBest = bestEmployee[0]; // получаем название первого элеманта массива (ключ обьекта)
-  for (let i = 1; i < bestEmployee.length; i += 1) {
-    if (findBest < employees[bestEmployee[i]]) {
-      findBest = employees[bestEmployee[i]];
-      nameBest = bestEmployee[i];
+  let findBest = employees[Object.keys(employees)[0]]; // получаем  первое значение обьекта (вставляя ключ из массива)
+  let nameBest = Object.keys(employees)[0]; // получаем название первого элеманта массива (ключ обьекта)
+  for (let i = 1; i < Object.keys(employees).length; i += 1) {
+    if (findBest < employees[Object.keys(employees)[i]]) {
+      findBest = employees[Object.keys(employees)[i]];
+      nameBest = Object.keys(employees)[i];
     }
   }
   return nameBest;
