@@ -4,12 +4,13 @@
 как свойства объекта в формате "имя": "кол-во задач". */
 
 const findBestEmployee = function (employees) {
-  let findBest = employees[Object.keys(employees)[0]]; // получаем  первое значение обьекта (вставляя ключ из массива)
-  let nameBest = Object.keys(employees)[0]; // получаем название первого элеманта массива (ключ обьекта)
-  for (let i = 1; i < Object.keys(employees).length; i += 1) {
-    if (findBest < employees[Object.keys(employees)[i]]) {
-      findBest = employees[Object.keys(employees)[i]];
-      nameBest = Object.keys(employees)[i];
+  let findBest = 0;
+  let nameBest;
+
+  for (const key in employees) {
+    if (findBest < employees[key]) {
+      findBest = employees[key];
+      nameBest = key;
     }
   }
   return nameBest;
